@@ -1,0 +1,453 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#003f32">
+  <meta name="description" content="Assinatura de manutenÃ§Ã£o residencial Gardini: profissionais qualificados, preÃ§o claro e acompanhamento do inÃ­cio ao fim.">
+  <title>Gardini ServiÃ§os Residenciais</title>
+  <style>
+    :root{
+      --green-950:#002f26;
+      --green-900:#003f32;
+      --green-800:#075543;
+      --green-700:#08724f;
+      --green-100:#e6f3ed;
+      --green-50:#f4faf7;
+      --orange:#f26722;
+      --orange-dark:#d95413;
+      --orange-soft:#fff0e7;
+      --ink:#10251f;
+      --muted:#536760;
+      --line:#dbe7e1;
+      --white:#fff;
+      --shadow:0 24px 70px rgba(0,63,50,.16);
+      --shadow-soft:0 12px 34px rgba(0,63,50,.10);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--white);line-height:1.55}
+    img{max-width:100%}
+    button,input,select,textarea{font:inherit}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1200px,calc(100% - 40px));margin-inline:auto}
+    .section{padding:96px 0}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;margin:0 0 16px;padding:8px 13px;border-radius:999px;background:var(--green-100);color:var(--green-800);font-size:.78rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+    h1,h2,h3{margin:0 0 16px;line-height:1.08;letter-spacing:-.035em}
+    h1{font-size:clamp(2.6rem,6vw,5.4rem)}
+    h2{font-size:clamp(2rem,4vw,3.5rem)}
+    h3{font-size:1.25rem}
+    p{margin:0 0 18px}
+    .lead{font-size:clamp(1.05rem,1.8vw,1.28rem);color:var(--muted);max-width:720px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:13px 22px;border:1px solid transparent;border-radius:999px;font-weight:850;cursor:pointer;transition:transform .25s ease,box-shadow .25s ease,background .25s ease}
+    .btn:hover{transform:translateY(-2px) scale(1.02)}
+    .btn-primary{background:var(--orange);color:#fff;box-shadow:0 10px 24px rgba(242,103,34,.25)}
+    .btn-primary:hover{background:var(--orange-dark)}
+    .btn-secondary{background:var(--green-900);color:#fff;box-shadow:0 10px 24px rgba(0,63,50,.18)}
+    .btn-outline{border-color:var(--green-900);color:var(--green-900);background:#fff}
+    .icon{width:22px;height:22px;flex:0 0 auto}
+
+    .site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(219,231,225,.9)}
+    .nav{min-height:84px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:950;color:var(--green-900)}
+    .brand-mark{width:46px;height:46px;display:grid;place-items:center;border:3px solid var(--green-900);border-radius:12px;transform:rotate(45deg);position:relative}
+    .brand-mark::after{content:"";position:absolute;width:24px;height:12px;border-left:6px solid var(--orange);border-bottom:6px solid var(--orange);transform:rotate(-90deg) translate(1px,-1px)}
+    .brand-text{line-height:1}
+    .brand-text strong{display:block;font-size:1.34rem;letter-spacing:.04em}
+    .brand-text span{display:block;margin-top:5px;font-size:.67rem;letter-spacing:.06em}
+    .nav-links{display:flex;align-items:center;gap:24px;font-size:.92rem;font-weight:750;color:var(--muted)}
+    .nav-links a:hover{color:var(--green-900)}
+    .menu-button{display:none;border:0;background:transparent;padding:8px;color:var(--green-900)}
+
+    .hero{position:relative;overflow:hidden;padding:72px 0 88px;background:radial-gradient(circle at 12% 20%,rgba(242,103,34,.10),transparent 28%),radial-gradient(circle at 86% 20%,rgba(8,114,79,.14),transparent 34%),linear-gradient(180deg,#fff,var(--green-50))}
+    .hero-grid{display:grid;grid-template-columns:.94fr 1.06fr;gap:68px;align-items:center}
+    .hero h1 span{display:block;color:var(--orange)}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0 28px}
+    .trust-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 22px;padding:0;margin:0;list-style:none;color:var(--muted);font-weight:700;font-size:.93rem}
+    .trust-list li{display:flex;align-items:flex-start;gap:9px}
+    .trust-list svg{color:var(--green-700);margin-top:1px}
+
+    /* ÃšNICO ANÃšNCIO VISUAL DA PÃGINA */
+    .single-ad{position:relative;width:min(520px,100%);margin-inline:auto}
+    .single-ad::before{content:"";position:absolute;inset:28px -24px -28px 24px;border-radius:32px;background:var(--green-900);opacity:.10;transform:rotate(2deg)}
+    .single-ad-frame{position:relative;border-radius:28px;overflow:hidden;background:#fff;border:8px solid rgba(255,255,255,.92);box-shadow:var(--shadow)}
+    .single-ad-frame img{display:block;width:100%;height:auto;object-fit:contain;background:#fff}
+    .single-ad-label{position:absolute;right:-14px;top:26px;z-index:2;padding:9px 14px;border-radius:999px;background:var(--orange);color:#fff;font-weight:900;font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;box-shadow:0 10px 25px rgba(242,103,34,.28)}
+
+    .benefit-strip{position:relative;z-index:3;margin-top:-34px}
+    .benefit-strip-inner{display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden;border-radius:22px;background:var(--green-900);color:#fff;box-shadow:var(--shadow)}
+    .mini-benefit{display:flex;gap:13px;align-items:center;padding:24px;border-right:1px solid rgba(255,255,255,.16)}
+    .mini-benefit:last-child{border-right:0}
+    .mini-benefit svg{width:32px;height:32px;color:#b9e977}
+    .mini-benefit strong{display:block;line-height:1.15}
+    .mini-benefit span{display:block;margin-top:4px;color:rgba(255,255,255,.72);font-size:.85rem}
+
+    .section-head{text-align:center;max-width:800px;margin:0 auto 44px}
+    .section-head .lead{margin-inline:auto}
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .card{padding:28px;border:1px solid var(--line);border-radius:var(--radius);background:#fff;box-shadow:0 1px 0 rgba(0,63,50,.02);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+    .card:hover{transform:translateY(-6px);box-shadow:var(--shadow-soft);border-color:#bcd4c9}
+    .icon-box{width:52px;height:52px;display:grid;place-items:center;margin-bottom:20px;border-radius:15px;background:var(--green-100);color:var(--green-900)}
+    .icon-box.orange{background:var(--orange-soft);color:var(--orange)}
+    .card p{color:var(--muted);margin-bottom:0}
+
+    .services{background:var(--green-50)}
+    .services-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+    .service{padding:25px 18px;text-align:center;border:1px solid var(--line);border-radius:18px;background:#fff}
+    .service .icon-box{margin:0 auto 16px}
+    .service p{font-size:.91rem;color:var(--muted);margin:0}
+    .service-note{margin:28px auto 0;max-width:940px;padding:18px 20px;border-left:4px solid var(--orange);border-radius:12px;background:var(--orange-soft);color:#6f391e}
+
+    .steps{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:start}
+    .steps-list{display:grid;gap:16px}
+    .step{display:grid;grid-template-columns:58px 1fr;gap:17px;padding:22px;border:1px solid var(--line);border-radius:17px;background:#fff}
+    .step-number{width:58px;height:58px;display:grid;place-items:center;border-radius:18px;background:var(--green-900);color:#fff;font-size:1.35rem;font-weight:950}
+    .step p{margin:0;color:var(--muted)}
+    .process-panel{padding:32px;border-radius:26px;background:linear-gradient(145deg,var(--green-900),var(--green-800));color:#fff;box-shadow:var(--shadow)}
+    .process-panel ul{display:grid;gap:13px;margin:25px 0 0;padding:0;list-style:none;color:rgba(255,255,255,.82)}
+    .process-panel li{display:flex;gap:10px;align-items:flex-start}
+    .process-panel svg{color:#b9e977;margin-top:2px}
+
+    .plans{background:linear-gradient(180deg,#fff,var(--green-50))}
+    .plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+    .plan{display:flex;flex-direction:column;position:relative;overflow:hidden;border:1px solid var(--line);border-radius:22px;background:#fff;box-shadow:var(--shadow-soft)}
+    .plan.featured{border:2px solid var(--orange);transform:translateY(-8px)}
+    .plan-tag{position:absolute;right:18px;top:18px;padding:7px 11px;border-radius:999px;background:var(--orange);color:#fff;font-size:.73rem;font-weight:950;text-transform:uppercase;letter-spacing:.06em}
+    .plan-head{padding:29px 27px 23px;border-bottom:1px solid var(--line)}
+    .plan.featured .plan-head{background:var(--orange-soft)}
+    .plan.protected .plan-head{background:var(--green-900);color:#fff}
+    .plan-name{font-size:1.3rem;font-weight:950}
+    .plan-desc{min-height:48px;color:var(--muted)}
+    .plan.protected .plan-desc{color:rgba(255,255,255,.72)}
+    .price{display:flex;align-items:flex-end;gap:5px;margin-top:20px}
+    .price strong{font-size:2.45rem;line-height:.95;letter-spacing:-.05em}
+    .price span{color:var(--muted);font-weight:700}
+    .plan.protected .price span{color:rgba(255,255,255,.72)}
+    .plan-body{display:flex;flex-direction:column;flex:1;padding:25px 27px 28px}
+    .plan-list{display:grid;gap:12px;margin:0 0 25px;padding:0;list-style:none;color:var(--muted)}
+    .plan-list li{display:flex;gap:9px;align-items:flex-start}
+    .plan-list svg{color:var(--green-700);margin-top:2px}
+    .plan.featured .plan-list svg{color:var(--orange)}
+    .plan-body .btn{margin-top:auto}
+    .disclaimer{max-width:900px;margin:26px auto 0;text-align:center;color:var(--muted);font-size:.9rem}
+
+    .safety{background:var(--green-900);color:#fff}
+    .safety-grid{display:grid;grid-template-columns:1fr 1fr;gap:68px;align-items:center}
+    .safety .lead{color:rgba(255,255,255,.72)}
+    .safety-list{display:grid;grid-template-columns:repeat(2,1fr);gap:13px;margin-top:28px}
+    .safety-item{display:flex;gap:10px;padding:15px;border:1px solid rgba(255,255,255,.15);border-radius:14px;background:rgba(255,255,255,.05)}
+    .safety-item svg{color:#b9e977}
+    .seal{width:min(390px,100%);aspect-ratio:1;margin:auto;display:grid;place-items:center;border-radius:50%;border:1px solid rgba(255,255,255,.22);background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.18),rgba(255,255,255,.05) 70%)}
+    .seal-core{width:235px;height:235px;display:grid;place-items:center;text-align:center;padding:30px;border-radius:50%;background:#fff;color:var(--green-900);box-shadow:var(--shadow)}
+    .seal-core svg{width:60px;height:60px;color:var(--orange)}
+    .seal-core strong{display:block;font-size:1.4rem;line-height:1.12}
+    .seal-core span{display:block;color:var(--muted);font-size:.9rem}
+
+    .faq-layout{display:grid;grid-template-columns:.75fr 1.25fr;gap:64px;align-items:start}
+    .faq-list{border-top:1px solid var(--line)}
+    .faq-item{border-bottom:1px solid var(--line)}
+    .faq-button{width:100%;display:flex;justify-content:space-between;gap:18px;padding:21px 0;border:0;background:transparent;text-align:left;color:var(--ink);font-weight:850;cursor:pointer}
+    .faq-button svg{color:var(--green-700);transition:transform .25s ease}
+    .faq-item.open .faq-button svg{transform:rotate(45deg)}
+    .faq-answer{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease}
+    .faq-item.open .faq-answer{grid-template-rows:1fr}
+    .faq-answer>div{overflow:hidden}
+    .faq-answer p{margin:0;padding:0 0 21px;color:var(--muted)}
+
+    .contact{background:var(--green-50)}
+    .contact-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:58px;align-items:start}
+    .contact-points{display:grid;gap:13px;margin-top:26px}
+    .contact-point{display:flex;gap:11px;color:var(--muted)}
+    .contact-point svg{color:var(--green-700);margin-top:2px}
+    .form-card{padding:30px;border:1px solid var(--line);border-radius:24px;background:#fff;box-shadow:var(--shadow-soft)}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .field{display:grid;gap:7px}
+    .field.full{grid-column:1/-1}
+    label{font-size:.88rem;font-weight:800;color:var(--green-900)}
+    input,select,textarea{width:100%;padding:13px 14px;border:1px solid #cbdad3;border-radius:12px;background:#fff;color:var(--ink);outline:none}
+    input:focus,select:focus,textarea:focus{border-color:var(--green-700);box-shadow:0 0 0 3px rgba(8,114,79,.12)}
+    textarea{min-height:110px;resize:vertical}
+    .privacy{display:flex;gap:9px;align-items:flex-start;margin:17px 0;color:var(--muted);font-size:.83rem}
+    .privacy input{width:auto;margin-top:4px}
+    .form-status{min-height:24px;margin-top:12px;color:var(--green-700);font-weight:750;font-size:.9rem}
+
+    footer{padding:34px 0;background:var(--green-950);color:#fff}
+    .footer-row{display:flex;justify-content:space-between;align-items:center;gap:24px}
+    .footer-row p{margin:0;color:rgba(255,255,255,.68);font-size:.88rem}
+    .footer-links{display:flex;gap:18px;color:rgba(255,255,255,.82);font-size:.88rem}
+
+    [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+    [data-reveal].visible{opacity:1;transform:none}
+
+    @media (max-width:980px){
+      .nav-links{display:none;position:absolute;left:20px;right:20px;top:76px;flex-direction:column;align-items:stretch;padding:18px;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:var(--shadow-soft)}
+      .nav-links.open{display:flex}
+      .menu-button{display:inline-grid;place-items:center}
+      .hero-grid,.steps,.safety-grid,.faq-layout,.contact-grid{grid-template-columns:1fr}
+      .hero-copy{text-align:center}
+      .hero-copy .lead{margin-inline:auto}
+      .hero-actions{justify-content:center}
+      .trust-list{max-width:620px;margin-inline:auto;text-align:left}
+      .single-ad{margin-top:10px;width:min(500px,100%)}
+      .benefit-strip-inner{grid-template-columns:repeat(2,1fr)}
+      .mini-benefit:nth-child(2){border-right:0}
+      .mini-benefit:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.16)}
+      .cards{grid-template-columns:repeat(2,1fr)}
+      .services-grid{grid-template-columns:repeat(3,1fr)}
+      .plans-grid{grid-template-columns:1fr;max-width:620px;margin-inline:auto}
+      .plan.featured{transform:none}
+      .faq-layout>div:first-child{text-align:center}
+      .faq-layout .lead{margin-inline:auto}
+    }
+    @media (max-width:640px){
+      .container{width:min(100% - 32px,1200px)}
+      .section{padding:68px 0}
+      .site-header .btn{display:none}
+      .nav{min-height:74px}
+      .brand-mark{width:39px;height:39px}
+      .brand-text strong{font-size:1.1rem}
+      .hero{padding:48px 0 66px}
+      .hero-grid{gap:42px}
+      .hero h1{font-size:clamp(2.45rem,12vw,4rem)}
+      .hero-actions .btn{width:100%}
+      .trust-list{grid-template-columns:1fr}
+      .single-ad-label{right:8px;top:16px}
+      .benefit-strip{margin-top:-20px}
+      .benefit-strip-inner,.cards,.services-grid,.safety-list,.form-grid{grid-template-columns:1fr}
+      .mini-benefit{border-right:0;border-bottom:1px solid rgba(255,255,255,.16)}
+      .mini-benefit:last-child{border-bottom:0}
+      .field.full{grid-column:auto}
+      .footer-row{flex-direction:column;text-align:center}
+      .footer-links{flex-wrap:wrap;justify-content:center}
+    }
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}[data-reveal]{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="Gardini ServiÃ§os Residenciais â€” inÃ­cio">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text"><strong>GARDINI</strong><span>SERVIÃ‡OS RESIDENCIAIS</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="NavegaÃ§Ã£o principal">
+        <a href="#beneficios">BenefÃ­cios</a>
+        <a href="#servicos">ServiÃ§os</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#planos">Planos</a>
+        <a href="#faq">DÃºvidas</a>
+      </nav>
+      <a class="btn btn-primary" href="#contato">Solicitar contato</a>
+      <button class="menu-button" id="menuButton" aria-label="Abrir menu" aria-controls="navLinks" aria-expanded="false">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy" data-reveal>
+          <div class="eyebrow">Assinatura de manutenÃ§Ã£o residencial</div>
+          <h1>Sua casa cuidada.<span>Sua rotina protegida.</span></h1>
+          <p class="lead">Profissionais qualificados, preÃ§o aprovado antes do serviÃ§o e acompanhamento do inÃ­cio ao fim para resolver pequenos reparos com mais seguranÃ§a e praticidade.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#planos">Conhecer os planos</a>
+            <a class="btn btn-outline" href="#contato">Falar com a Gardini</a>
+          </div>
+          <ul class="trust-list">
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Profissionais selecionados</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>PreÃ§o aprovado previamente</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Atendimento registrado</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Garantia conforme o serviÃ§o</li>
+          </ul>
+        </div>
+
+        <figure class="single-ad" id="anuncio-unico" data-reveal aria-label="AnÃºncio da Gardini ServiÃ§os Residenciais">
+          <span class="single-ad-label">AnÃºncio oficial</span>
+          <div class="single-ad-frame">
+            <img src="assets/anuncio-gardini.png" alt="AnÃºncio Gardini ServiÃ§os Residenciais â€” assinatura de manutenÃ§Ã£o residencial" width="941" height="1672" loading="eager" fetchpriority="high">
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <div class="benefit-strip" aria-label="Diferenciais principais">
+      <div class="container benefit-strip-inner">
+        <div class="mini-benefit"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14H3V6a2 2 0 0 1 2-2Z"/><path d="m8 15 2 2 5-5"/></svg><div><strong>Agendamento fÃ¡cil</strong><span>SolicitaÃ§Ã£o organizada</span></div></div>
+        <div class="mini-benefit"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2"/></svg><div><strong>Atendimento regional</strong><span>ABC e Litoral Sul</span></div></div>
+        <div class="mini-benefit"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><strong>Mais agilidade</strong><span>Triagem antes da visita</span></div></div>
+        <div class="mini-benefit"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 3h10l3 3v15H4V3h3Z"/><path d="M8 11h8M8 15h6"/></svg><div><strong>Registro e garantia</strong><span>ServiÃ§o documentado</span></div></div>
+      </div>
+    </div>
+
+    <section class="section" id="beneficios">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div class="eyebrow">Por que escolher</div>
+          <h2>ManutenÃ§Ã£o residencial sem improvisos</h2>
+          <p class="lead">Um Ãºnico canal para organizar diferentes necessidades da casa, com comunicaÃ§Ã£o clara e responsabilidade pela soluÃ§Ã£o.</p>
+        </div>
+        <div class="cards">
+          <article class="card" data-reveal><div class="icon-box"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 22a8 8 0 0 1 16 0"/><path d="m16 14 2 2 4-4"/></svg></div><h3>Profissional adequado</h3><p>Triagem para direcionar a especialidade compatÃ­vel com cada solicitaÃ§Ã£o.</p></article>
+          <article class="card" data-reveal><div class="icon-box orange"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5"/></svg></div><h3>PreÃ§o transparente</h3><p>Escopo, tempo, materiais e custos adicionais informados antes da execuÃ§Ã£o.</p></article>
+          <article class="card" data-reveal><div class="icon-box"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>ServiÃ§o acompanhado</h3><p>Ordem de serviÃ§o, registros, teste final, aceite e orientaÃ§Ãµes ao cliente.</p></article>
+          <article class="card" data-reveal><div class="icon-box orange"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7h-7V3L4 12l9 9v-4h7z"/></svg></div><h3>Responsabilidade</h3><p>CoordenaÃ§Ã£o de retorno, correÃ§Ã£o ou encaminhamento quando necessÃ¡rio.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="servicos">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div class="eyebrow">ServiÃ§os atendidos</div>
+          <h2>Pequenos reparos para o dia a dia</h2>
+          <p class="lead">Atendimentos sujeitos Ã  triagem, condiÃ§Ãµes tÃ©cnicas, seguranÃ§a e regras do plano contratado.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service" data-reveal><div class="icon-box"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h10v5H4zM14 9h4a3 3 0 0 1 3 3v2M8 7V4h4v3"/><path d="M20 17c0 2-2 4-2 4s-2-2-2-4a2 2 0 1 1 4 0Z"/></svg></div><h3>HidrÃ¡ulica</h3><p>Torneiras, sifÃµes, vedaÃ§Ãµes e reparos simples.</p></article>
+          <article class="service" data-reveal><div class="icon-box orange"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v6M16 2v6M7 8h10v3a5 5 0 0 1-10 0V8Z"/><path d="m13 10-3 4h3l-2 4"/></svg></div><h3>ElÃ©trica</h3><p>Tomadas, interruptores, luminÃ¡rias e chuveiros.</p></article>
+          <article class="service" data-reveal><div class="icon-box"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 3h16v18H4zM4 9h16M9 12h6"/></svg></div><h3>Montagem</h3><p>MÃ³veis, prateleiras, quadros, cortinas e acessÃ³rios.</p></article>
+          <article class="service" data-reveal><div class="icon-box orange"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3h14v18H5zM14 12h.01"/><path d="M19 7h3v10h-3"/></svg></div><h3>Fechaduras</h3><p>Puxadores, dobradiÃ§as, regulagens e pequenos ajustes.</p></article>
+          <article class="service" data-reveal><div class="icon-box"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m14 4 6 6-10 10H4v-6Z"/><path d="m12 6 6 6"/></svg></div><h3>Acabamentos</h3><p>Silicone, rejunte pontual e pequenas correÃ§Ãµes.</p></article>
+        </div>
+        <div class="service-note" data-reveal><strong>Importante:</strong> reformas, sistemas crÃ­ticos, serviÃ§os em altura, gÃ¡s, estrutura e outras atividades de risco especial exigem avaliaÃ§Ã£o e orÃ§amento separado.</div>
+      </div>
+    </section>
+
+    <section class="section" id="como-funciona">
+      <div class="container steps">
+        <div data-reveal>
+          <div class="eyebrow">Como funciona</div>
+          <h2>Resolver ficou mais simples</h2>
+          <p class="lead">A Gardini organiza o atendimento desde a descriÃ§Ã£o do problema atÃ© o encerramento do serviÃ§o.</p>
+        </div>
+        <div class="steps-list">
+          <article class="step" data-reveal><div class="step-number">1</div><div><h3>Conte o que aconteceu</h3><p>Descreva o problema, envie informaÃ§Ãµes e indique sua disponibilidade.</p></div></article>
+          <article class="step" data-reveal><div class="step-number">2</div><div><h3>Receba a orientaÃ§Ã£o</h3><p>A equipe classifica especialidade, risco, elegibilidade e materiais provÃ¡veis.</p></div></article>
+          <article class="step" data-reveal><div class="step-number">3</div><div><h3>Acompanhe a execuÃ§Ã£o</h3><p>O atendimento Ã© realizado, testado, registrado e encerrado com orientaÃ§Ãµes.</p></div></article>
+          <aside class="process-panel" data-reveal><h3>Processo Gardini</h3><ul><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Triagem antes do envio do profissional</li><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Escopo e condiÃ§Ãµes aprovados</li><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>ExecuÃ§Ã£o com checklist e seguranÃ§a</li><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>PÃ³s-atendimento e histÃ³rico da residÃªncia</li></ul></aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section plans" id="planos">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div class="eyebrow">Planos-piloto</div>
+          <h2>Escolha o cuidado ideal para sua casa</h2>
+          <p class="lead">CondiÃ§Ãµes preliminares sujeitas Ã  validaÃ§Ã£o operacional e contratual antes do lanÃ§amento.</p>
+        </div>
+        <div class="plans-grid">
+          <article class="plan" data-reveal><div class="plan-head"><div class="plan-name">Acesso Seguro</div><p class="plan-desc">OrganizaÃ§Ã£o e condiÃ§Ãµes diferenciadas para o dia a dia.</p><div class="price"><strong>R$ 49,90</strong><span>/mÃªs</span></div></div><div class="plan-body"><ul class="plan-list"><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Triagem dos chamados</li><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>HistÃ³rico digital da residÃªncia</li><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Uma inspeÃ§Ã£o anual</li><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>PreÃ§o reduzido para visitas</li></ul><a class="btn btn-outline" href="#contato">Tenho interesse</a></div></article>
+          <article class="plan featured" data-reveal><span class="plan-tag">Mais escolhido</span><div class="plan-head"><div class="plan-name">ManutenÃ§Ã£o Segura</div><p class="plan-desc">Mais tranquilidade para a rotina da residÃªncia.</p><div class="price"><strong>R$ 99,90</strong><span>/mÃªs</span></div></div><div class="plan-body"><ul class="plan-list"><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Dois crÃ©ditos anuais de atÃ© 90 min</li><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Uma inspeÃ§Ã£o preventiva anual</li><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>10% em mÃ£o de obra maior</li><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Atendimento conforme regras do plano</li></ul><a class="btn btn-primary" href="#contato">Tenho interesse</a></div></article>
+          <article class="plan protected" data-reveal><div class="plan-head"><div class="plan-name">ResidÃªncia Protegida</div><p class="plan-desc">Cuidado mais completo e prioridade regional.</p><div class="price"><strong>R$ 179,90</strong><span>/mÃªs</span></div></div><div class="plan-body"><ul class="plan-list"><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Quatro crÃ©ditos anuais de atÃ© 90 min</li><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>InspeÃ§Ã£o preventiva semestral</li><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Prioridade regional</li><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>15% em mÃ£o de obra maior</li></ul><a class="btn btn-secondary" href="#contato">Tenho interesse</a></div></article>
+        </div>
+        <p class="disclaimer">Materiais, peÃ§as, equipamentos especiais, serviÃ§os emergenciais, atividades de risco e itens fora do escopo sÃ£o cobrados separadamente apÃ³s aprovaÃ§Ã£o. Valores apresentados como hipÃ³tese do projeto-piloto.</p>
+      </div>
+    </section>
+
+    <section class="section safety">
+      <div class="container safety-grid">
+        <div data-reveal><div class="eyebrow">SeguranÃ§a e qualidade</div><h2>Cuidado documentado do inÃ­cio ao fim</h2><p class="lead">A proposta operacional combina profissional compatÃ­vel, anÃ¡lise do serviÃ§o, registro do atendimento e regra de parada diante de condiÃ§Ã£o insegura.</p><div class="safety-list"><div class="safety-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>IdentificaÃ§Ã£o do profissional</div><div class="safety-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Escopo aprovado</div><div class="safety-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Fotos e registros</div><div class="safety-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Teste e aceite final</div><div class="safety-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Garantia informada</div><div class="safety-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>OrientaÃ§Ãµes preventivas</div></div></div>
+        <div class="seal" data-reveal><div class="seal-core"><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg><strong>ServiÃ§o acompanhado</strong><span>do chamado ao pÃ³s-atendimento</span></div></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container faq-layout">
+        <div data-reveal><div class="eyebrow">DÃºvidas frequentes</div><h2>InformaÃ§Ã£o clara antes de contratar</h2><p class="lead">Consulte as regras bÃ¡sicas e confirme as condiÃ§Ãµes do plano no momento da contrataÃ§Ã£o.</p></div>
+        <div class="faq-list" data-reveal>
+          <div class="faq-item open"><button class="faq-button" type="button">A mensalidade inclui materiais?<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-answer"><div><p>NÃ£o. Materiais, peÃ§as e consumÃ­veis sÃ£o apresentados separadamente e adquiridos apÃ³s aprovaÃ§Ã£o.</p></div></div></div>
+          <div class="faq-item"><button class="faq-button" type="button">Os planos tÃªm uso ilimitado?<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-answer"><div><p>NÃ£o. Cada plano possui regras, crÃ©ditos, limites de tempo, elegibilidade e exclusÃµes prÃ³prias.</p></div></div></div>
+          <div class="faq-item"><button class="faq-button" type="button">Como o profissional Ã© escolhido?<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-answer"><div><p>A solicitaÃ§Ã£o passa por triagem considerando especialidade, risco, localizaÃ§Ã£o, disponibilidade e qualificaÃ§Ã£o necessÃ¡ria.</p></div></div></div>
+          <div class="faq-item"><button class="faq-button" type="button">Quais serviÃ§os exigem orÃ§amento separado?<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-answer"><div><p>Reformas, sistemas crÃ­ticos, atividades em altura, gÃ¡s, estrutura e serviÃ§os fora do escopo de pequenos reparos.</p></div></div></div>
+          <div class="faq-item"><button class="faq-button" type="button">Onde a Gardini pretende atender?<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-answer"><div><p>A Ã¡rea inicial prevista Ã© a RegiÃ£o do ABC e o Litoral Sul. MunicÃ­pios, zonas e horÃ¡rios serÃ£o confirmados conforme a implantaÃ§Ã£o.</p></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contato">
+      <div class="container contact-grid">
+        <div data-reveal><div class="eyebrow">Solicite contato</div><h2>Encontre o plano ideal para sua residÃªncia</h2><p class="lead">Preencha os dados para preparar uma mensagem de atendimento. ApÃ³s configurar o nÃºmero oficial, a pÃ¡gina encaminharÃ¡ a solicitaÃ§Ã£o ao WhatsApp.</p><div class="contact-points"><div class="contact-point"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2"/></svg>AtuaÃ§Ã£o inicial: ABC e Litoral Sul</div><div class="contact-point"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14H3V6a2 2 0 0 1 2-2Z"/></svg>Agendamento conforme disponibilidade regional</div><div class="contact-point"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>Triagem de seguranÃ§a antes do atendimento</div></div></div>
+        <form class="form-card" id="leadForm" data-reveal>
+          <div class="form-grid">
+            <div class="field"><label for="nome">Nome</label><input id="nome" name="nome" autocomplete="name" required></div>
+            <div class="field"><label for="telefone">WhatsApp</label><input id="telefone" name="telefone" inputmode="tel" autocomplete="tel" required></div>
+            <div class="field"><label for="cidade">Cidade</label><input id="cidade" name="cidade" autocomplete="address-level2" required></div>
+            <div class="field"><label for="plano">Plano de interesse</label><select id="plano" name="plano"><option>Ainda nÃ£o sei</option><option>Acesso Seguro</option><option>ManutenÃ§Ã£o Segura</option><option>ResidÃªncia Protegida</option></select></div>
+            <div class="field full"><label for="necessidade">Principal necessidade</label><textarea id="necessidade" name="necessidade" placeholder="Conte brevemente o que precisa resolver."></textarea></div>
+          </div>
+          <label class="privacy"><input type="checkbox" required> <span>Autorizo o contato da Gardini para atendimento desta solicitaÃ§Ã£o e o tratamento dos dados informados para essa finalidade.</span></label>
+          <button class="btn btn-primary" type="submit">Preparar solicitaÃ§Ã£o</button>
+          <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span class="brand-text"><strong>GARDINI</strong><span>SERVIÃ‡OS RESIDENCIAIS</span></span></div>
+      <p>Â© 2026 Gardini ServiÃ§os Residenciais. Projeto-piloto.</p>
+      <div class="footer-links"><a href="#inicio">InÃ­cio</a><a href="#planos">Planos</a><a href="#contato">Contato</a></div>
+    </div>
+  </footer>
+
+  <script>
+    // Insira apenas nÃºmeros, com DDI e DDD. Exemplo: 5511999999999
+    const WHATSAPP_NUMBER = "5511934094906";
+
+    const menuButton = document.getElementById('menuButton');
+    const navLinks = document.getElementById('navLinks');
+    menuButton.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(open));
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuButton.setAttribute('aria-expanded','false');
+    }));
+
+    document.querySelectorAll('.faq-button').forEach(button => {
+      button.addEventListener('click', () => button.closest('.faq-item').classList.toggle('open'));
+    });
+
+    const reveal = document.querySelectorAll('[data-reveal]');
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+      }), {threshold:.12});
+      reveal.forEach((el,index) => { el.style.transitionDelay = `${Math.min(index % 4,3) * 100}ms`; observer.observe(el); });
+    } else { reveal.forEach(el => el.classList.add('visible')); }
+
+    const form = document.getElementById('leadForm');
+    const status = document.getElementById('formStatus');
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      const message = [
+        'OlÃ¡! Tenho interesse nos serviÃ§os da Gardini.',
+        `Nome: ${data.get('nome')}`,
+        `Telefone: ${data.get('telefone')}`,
+        `Cidade: ${data.get('cidade')}`,
+        `Plano: ${data.get('plano')}`,
+        `Necessidade: ${data.get('necessidade') || 'NÃ£o informada'}`
+      ].join('\n');
+      if (WHATSAPP_NUMBER) {
+        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank', 'noopener');
+        status.textContent = 'Abrindo o WhatsApp com sua solicitaÃ§Ã£o.';
+      } else {
+        try {
+          await navigator.clipboard.writeText(message);
+          status.textContent = 'SolicitaÃ§Ã£o copiada. Configure o nÃºmero oficial no arquivo para abrir o WhatsApp automaticamente.';
+        } catch {
+          status.textContent = 'Configure o nÃºmero oficial na variÃ¡vel WHATSAPP_NUMBER para ativar o envio pelo WhatsApp.';
+        }
+      }
+    });
+  </script>
+</body>
+</html>
+
